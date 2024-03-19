@@ -1,0 +1,20 @@
+burger = document.querySelector('.burger')
+navbar = document.querySelector('.navbar')
+navlist = document.querySelector('.navlist')
+rightNav = document.querySelector('.rightNav')
+burger.addEventListener('click', ()=>{
+    rightNav.classList.toggle('v-class-resp');
+    navlist.classList.toggle('v-class-resp');
+    navbar.classList.toggle('h-nav-resp');
+})
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
